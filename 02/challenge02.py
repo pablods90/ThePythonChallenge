@@ -17,6 +17,6 @@ raw_text = codecs.open('raw_text.txt','rt',encoding='utf-8').read()
 # Apply a filter
 pretty_string = filter(lambda character: character in alphabet,raw_text)
 
-# Print decoded string
+# Print hidden string
 print "\nHidden String:\n"
 print pretty_string + "\n"
