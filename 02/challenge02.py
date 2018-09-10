@@ -11,7 +11,7 @@ import string
 # Variables
 alphabet = tuple(string.ascii_letters + string.digits)
 
-# Open the file and get the raw text (it is unicode!)
+# Open the file and get the raw text (unicode!)
 raw_text = codecs.open('raw_text.txt','rt',encoding='utf-8').read()
 
 # Apply a filter
