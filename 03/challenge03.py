@@ -15,8 +15,9 @@ import re
 raw_text = "".join( open('raw_text.txt','rt').read().splitlines() )
 
 # Apply a RegExp to retrieve the parttern
-reg_exp = r'(\B[A-Za-z]+\B)\1{2}[A-Za-z]\1{3}'
+#reg_exp = r'(\B[A-Za-z]+\B)\1{2}[A-Za-z]\1{3}'
 #reg_exp = r'[A-Z]{3}[a-z][A-Z]{3}'
+reg_exp = r'([A-Z])\1{2}[a-z]([A-Z])\2{2}'
 findings = re.search(reg_exp,raw_text,re.M)
 
 # Show the results
