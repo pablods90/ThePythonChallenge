@@ -2,9 +2,11 @@
 # @Patan
 # Challenge 04: http://www.pythonchallenge.com/pc/def/linkedlist.php
 # Comments: - In the web page source there is a comment that suggests using
-#           the urlib.
+#           the urlib. We use requests (which is newer!).
 #           - There are a lot of 'nothings'!! Be patient... the script may take
 #           a while to complete.
+#           - I include the challenge in a .pdf but just for reference. This challenge
+#           requires the site to be online (no way I am dumping all that phps!).
 
 # Imports
 import requests
@@ -26,24 +28,26 @@ for i in range(400):
     web_page = requests.get(base_url,params=parameters)
 
     # Parse the response to get the new nothing
-    new_nothing = re.search(r'[0-9]+', web_page.text, re.U)
+    new_nothing = re.search(r'the next nothing is ([0-9]+)', web_page.text, re.U)
 
-    # If found a new one... update and keep going. If not... we are done!
+    # If found a new one... update and keep going.
+    # Note:
+    #       We are taking only the capture group 1... which is our number.
     if new_nothing is not None:
-        parameters['nothing'] = new_nothing.group()
+        parameters['nothing'] = new_nothing.group(1)
 
+    # Get rid of tricky 'nothings'...
     elif parameters['nothing'] == '16044':
-        # Get rid of tricky Nothings... by checking some special ones.
         parameters['nothing'] = str(int('16044')/2)
 
     else:
         print "\nEnd of the chain!"
         print "\nThe last page is: ", web_page.url, "\n"
         print web_page.text
-        print "The url is: "
+        print "\nThe next challenge is: " + url + web_page.text
         exit()
 
     # Show the progress
     print "\nSearching URL: \t\t", web_page.url
     print "Got new nothing: \t", parameters['nothing']
-    #time.sleep(1)
+    time.sleep(1)
