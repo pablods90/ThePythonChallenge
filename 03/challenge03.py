@@ -40,9 +40,9 @@ if findings:
     #
     # If we keep the 4th position of each string we can get our keyword...
     #
-    keyword=""
+    keyword = ""
     for match in findings:
-        keyword+=match[4]
+        keyword += match[4]
 
     print '\nOur keyword is: ', keyword, "\n"
 
