@@ -6,6 +6,9 @@
 # Imports
 import string
 
+# Helpers
+shift = lambda the_list, n : the_list[-(len(the_list)-n):] + the_list[:n]
+
 # Variables
 alphabet = string.ascii_lowercase
 creepy_string = (   "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq "
@@ -14,7 +17,6 @@ creepy_string = (   "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq
                     "lmu ynnjw ml rfc spj.")
 
 # Create translation
-shift = lambda the_list, n : the_list[-(len(the_list)-n):] + the_list[:n]
 translation = string.maketrans(alphabet,shift(alphabet,2))
 
 # Translate it
