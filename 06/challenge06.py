@@ -69,4 +69,8 @@ with zipfile.ZipFile(zip_name,'r') as the_zip:
             break
 
 # Print the final string
-print "\nThe ASCII art is:\n%s" % comments
+print "\nThe ASCII art is:\n\n%s" % comments
+
+# This leads us to we the URL: http://www.pythonchallenge.com/pc/def/hockey.html
+# Each letter from the word HOCKEY, is made up entirley with one letter. That
+# leads us to the word "OXYGEN".
