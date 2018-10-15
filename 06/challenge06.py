@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # @Patan
 # Challenge 06: http://www.pythonchallenge.com/pc/def/channel.html
-# Comments: This is one of the trickest challenges... I spent a lot of time
+# Comments: This is one of the trickiest challenges... I spent a lot of time
 #           playing with Python ZIP method, trying to combine lists from the
 #           previous pickled object. I really lost a lot of time... until while
 #           I was running out of ideas I tried replacing the ".html" for a ".zip"
-#           in the URL. Got it! Yo download a .zip file full of nothnigs...
+#           in the URL. Got it! You download a .zip file full of nothings...
 
 # Imports
 import time
@@ -71,6 +71,6 @@ with zipfile.ZipFile(zip_name,'r') as the_zip:
 # Print the final string
 print "\nThe ASCII art is:\n\n%s" % comments
 
-# This leads us to we the URL: http://www.pythonchallenge.com/pc/def/hockey.html
-# Each letter from the word HOCKEY, is made up entirley with one letter. That
+# This leads us to the URL: http://www.pythonchallenge.com/pc/def/hockey.html
+# Each letter from the word HOCKEY, is made up entirely with one letter. That
 # leads us to the word "OXYGEN".
