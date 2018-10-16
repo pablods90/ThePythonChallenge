@@ -71,6 +71,21 @@ with zipfile.ZipFile(zip_name,'r') as the_zip:
 # Print the final string
 print "\nThe ASCII art is:\n\n%s" % comments
 
+#****************************************************************
+#****************************************************************
+#**                                                            **
+#**   OO    OO    XX      YYYY    GG    GG  EEEEEE NN      NN  **
+#**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE  NN    NN   **
+#**   OO    OO XXX  XXX YYY   YY  GG GG     EE       NN  NN    **
+#**   OOOOOOOO XX    XX YY        GGG       EEEEE     NNNN     **
+#**   OOOOOOOO XX    XX YY        GGG       EEEEE      NN      **
+#**   OO    OO XXX  XXX YYY   YY  GG GG     EE         NN      **
+#**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE     NN      **
+#**   OO    OO    XX      YYYY    GG    GG  EEEEEE     NN      **
+#**                                                            **
+#****************************************************************
+# **************************************************************
+
 # This leads us to the URL: http://www.pythonchallenge.com/pc/def/hockey.html
 # Each letter from the word HOCKEY, is made up entirely with one letter. That
 # leads us to the word "OXYGEN".
