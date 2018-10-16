@@ -65,7 +65,7 @@ with zipfile.ZipFile(zip_name,'r') as the_zip:
         else:
             print "\nEnd of the chain!"
             print "\nThe last file is: %s\n" % file_to_open
-            print "The found text is: %s" % file_text
+            print "The founded text is: %s" % file_text
             break
 
 # Print the final string
