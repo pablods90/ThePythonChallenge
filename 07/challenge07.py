@@ -32,41 +32,41 @@ class PNGHandler():
     def get_row(self, row):
         return self.img_matrix[row]
 
-    def filter_duplicates(self, raw_text):
-        the_string = ''
-        for i, c in enumerate(raw_text):
-            if c is not raw_text[i-1]:
-                the_string += c
+    def get_width(self):
+        return len(self.img_matrix[0])
 
-        return the_string
+    def get_height(self):
+        return len(self.img_matrix)
 
 # Variables
 raw_text = ''
+step = 7
 slected_row = 45
 
 # Create the PNGHandler
 the_png = PNGHandler('oxygen.png')
 
-# We hold the image in a 3d array.
+# Print info
+w = the_png.get_width()
+h = the_png.get_height()
+print "Working with image %dx%d" % (w,h)
+
+# - We hold the image in a 3d array.
 # arr[row][column][R G B A]
 #     95 x  629    0 1 2 3
-# We always use the positon 0 of the pixel, as the three values
+# - We always use the positon 0 of the pixel, as the three values
 # are the same for our greyscale pixels (RGBA).
-for i, pixel in enumerate(the_png.get_row(slected_row)):
-    raw_text += chr(pixel[0])
+# - As the grayscale blocks are 7 pixels width, our step in the iteration
+# is 7.
+for i in range(0,w,step):
+    raw_text += chr(the_png.get_pixel(slected_row,i)[0])
 
-# Filter duplicated characters & print the string
-print "\nHidden text found:\n%s \n" % the_png.filter_duplicates(raw_text)
+# Print the string
+print "\nHidden text found:\n%s \n" % raw_text
 
 # Now we try to figure out the decoded text...
-s = [105, 10, 16, 101, 103, 14, 105, 16, 121]
-
+s = [105, 110, 116, 101, 103, 114, 105, 116, 121]
 str = map(lambda x: chr(x),s)
 
-s=''
-
-for c in str:
-    s+=c
-print '\n'
-print str
-print s
+# Show the string
+print "\nOur secret string is: %s.\n" % ''.join(str)
