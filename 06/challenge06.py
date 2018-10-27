@@ -5,7 +5,7 @@
 #           playing with Python ZIP method, trying to combine lists from the
 #           previous pickled object. I really lost a lot of time... until while
 #           I was running out of ideas I tried replacing the ".html" for a ".zip"
-#           in the URL. Got it! You download a .zip file full of nothings...
+#           in the URL. Got it! You download a .zip file full of more nothings...
 
 # Imports
 import time
