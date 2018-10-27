@@ -5,7 +5,6 @@
 
 # Imports
 import bz2
-import string
 
 # Helper
 class BZ2Module:
